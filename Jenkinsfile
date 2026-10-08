@@ -25,13 +25,17 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh '''
-                        sonar-scanner \
-                        -Dsonar.projectKey=meta001 \
-                        -Dsonar.projectName=meta001 \
-                        -Dsonar.sources=.
-                    '''
+                script {
+                    def scannerHome = tool 'SonarQubeScanner'
+
+                    withSonarQubeEnv('SonarQube') {
+                        sh """
+                            ${scannerHome}/bin/sonar-scanner \
+                            -Dsonar.projectKey=meta001 \
+                            -Dsonar.projectName=meta001 \
+                            -Dsonar.sources=.
+                        """
+                    }
                 }
             }
         }
