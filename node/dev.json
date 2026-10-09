@@ -4,7 +4,7 @@
   "nodeType": "worker",
   "region": "us-east-1",
   "availabilityZone": "us-east-1a",
-  "instanceType": "t3.micro",
+  "instanceType": "t3.small",
   "os": "Amazon Linux 2023",
   "kubernetes": {
     "role": "worker",
