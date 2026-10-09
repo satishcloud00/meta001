@@ -1,2 +1,2 @@
 # flipkart
-Maven + SonarQube + Nexus CI pipeline
+Maven + SonarQube + Nexus CI pipeline.
